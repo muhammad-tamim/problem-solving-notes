@@ -1,4 +1,4 @@
-<h1 align="center">Problem Solving</h1>
+<h1 align="center">Problem Solving Notes</h1>
 
 - [1. Sheet 1 (Data type and Conditions):](#1-sheet-1-data-type-and-conditions)
   - [1.1. A - Say Hello With C++:](#11-a---say-hello-with-c)
@@ -1383,25 +1383,206 @@ any_number / 0          // Undefined behavior or runtime error
 
 https://codeforces.com/group/MWSDmqGsZm/contest/219432/problem/A
 
+```c
+#include <stdio.h>
+
+int main() {
+    int n; 
+    scanf("%d", &n);
+
+    for(int i = 1; i <= n; i++) {
+        printf("%d\n", i);
+    }
+
+    return 0;
+}
+```
+
 ## 3.2. B. Problem Name: Even Numbers
 
 https://codeforces.com/group/MWSDmqGsZm/contest/219432/problem/B
+
+```c
+#include <stdio.h>
+#include <stdbool.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    bool isEven = false;
+
+    for(int i = 1; i <=n; i++){
+        if(i % 2 == 0){
+            isEven = true;
+            printf("%d\n", i);
+        }
+    }
+    if(!isEven){
+        printf("-1");
+    }
+
+    return 0;
+}
+```
 
 ## 3.3. C. Problem Name: Even, Odd, Positive and Negative
 
 https://codeforces.com/group/MWSDmqGsZm/contest/219432/problem/C
 
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    int arr[n];
+
+    for(int i = 0; i < n; i++){
+        scanf("%d", &arr[i]);
+    }
+
+    int evenCount = 0;
+    int oddCount = 0;
+    int PositiveCount = 0;
+    int NegativeCount = 0;
+
+    for(int i = 0; i < n; i++){
+        if(arr[i] % 2 == 0){
+            evenCount++;
+        }
+        if(arr[i] % 2 != 0){
+            oddCount++;
+        }
+        if(arr[i] > 0){
+            PositiveCount++;
+        }
+        if(arr[i] < 0){
+            NegativeCount++;
+        }
+    }
+
+    printf("Even: %d\n", evenCount);
+    printf("Odd: %d\n", oddCount);
+    printf("Positive: %d\n", PositiveCount);
+    printf("Negative: %d", NegativeCount);
+
+    return 0;
+}
+```
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    int even = 0, odd = 0;
+    int positive = 0, negative = 0;
+
+    for (int i = 1; i <= n; i++) {
+        int x;
+        scanf("%d", &x);
+
+        // Check even and odd
+        if (x % 2 == 0) {
+            even++;
+        } else {
+            odd++;
+        }
+
+        // Check positive and negative
+        if (x > 0) {
+            positive++;
+        } else if (x < 0) {
+            negative++;
+        }
+    }
+
+    printf("Even: %d\n", even);
+    printf("Odd: %d\n", odd);
+    printf("Positive: %d\n", positive);
+    printf("Negative: %d\n", negative);
+
+    return 0;
+}
+```
+
 ## 3.4. D. Problem Name: Fixed Password
 
 https://codeforces.com/group/MWSDmqGsZm/contest/219432/problem/D
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+
+    while(1){
+        scanf("%d", &n);
+
+        if(n == 1999){
+            printf("Correct");
+            break;
+        }
+        else{
+            printf("Wrong\n");
+        }
+    }
+
+    return 0;
+}
+```
 
 ## 3.5. E. Problem Name: Max
 
 https://codeforces.com/group/MWSDmqGsZm/contest/219432/problem/E
 
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    int arr[n];
+    for(int i = 0; i < n; i++){
+        scanf("%d", &arr[i]);
+    }
+
+    int max = arr[0];
+    for(int i = 0; i < n; i++){
+        if(arr[i] >= max){
+            max = arr[i];
+        }
+    }
+
+    printf("%d", max);
+
+    return 0;
+}
+```
+
+
 ## 3.6. F. Problem Name: Multiplication Table
 
 https://codeforces.com/group/MWSDmqGsZm/contest/219432/problem/F
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    for(int i = 1; i <= 12; i++){
+        printf("%d * %d = %d\n", n, i, n * i);
+    }
+
+    return 0;
+}
+```
 
 ## 3.7. G. Problem Name: Factorial
 
